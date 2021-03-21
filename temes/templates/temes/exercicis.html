@@ -1,0 +1,32 @@
+{% extends 'temes/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<div class="row ">
+
+    <div class="col-sm ">
+    </div>
+    <div class="col-sm ">
+        {% for i in exercicis reversed %}
+        <div class="mb-auto p-2">
+            <h5>{{i.any}}</h5>
+        </div>
+        <div class="mb-auto p-2">
+            <img src="{% static i.imatge %}" alt="My image" width="600px">
+        </div>
+        <div class="mb-auto p-2">
+            <a href="{% url 'temes:show' i.pk  %}"
+               class="btn btn-primary">
+                Exercici {{i.exercici}}
+            </a>
+        </div>
+        <div class="card mb-4 shadow-sm">
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-sm ">
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,28 @@
+{% extends 'temes/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row ">
+    <div class="col-sm ">
+    </div>
+    <div class="col-sm ">
+        <h5>{{show_exercici.any}}</h5>
+        <div class="mr-auto p-1">
+            <img src="{% static show_exercici.imatge %}" alt="My image" width="700px">
+        </div>
+        <div class="mb-auto p-2">
+            <a href="{% url 'temes:exercicis' show_exercici.category_id %}"
+               class="btn btn-primary">
+                Tornar
+            </a>
+        </div>
+
+
+    </div>
+    <div class="col-sm ">
+    </div>
+
+</div>
+
+{%endblock%}
